@@ -3,6 +3,8 @@
 
 int add_arr(int* arr) {
 	int result = 0;
+	// Since C arrays are null terminated, knowing the size
+	// is not always necessary
 	while (*arr) {
 		result += *arr;
 		arr++;
@@ -11,6 +13,7 @@ int add_arr(int* arr) {
 }
 
 int mult_arr(int* arr) {
+	// Must start with 1, not 0
 	int result = 1;
 	while (*arr) {
 		result *= *arr;
