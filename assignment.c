@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int add_arr(int* arr) {
 	int result = 0;
@@ -18,6 +19,14 @@ int mult_arr(int* arr) {
 	return result;
 }
 
+int* rev_arr(int* arr, int size) {
+	int *result = malloc(size*sizeof(int));
+	for (int i = 0; i < size; i++) {
+		result[i] = arr[size-i-1];
+	}
+	return result;
+}
+
 int main() {
 	int arr[5];
 	printf("Please enter 5 numbers\n");
@@ -27,4 +36,12 @@ int main() {
 
 	printf("The addition of your numbers is: %d\n", add_arr(arr));
 	printf("The multiplication of your numbers is: %d\n", mult_arr(arr));
+
+	int* rev = rev_arr(arr, 5);
+	printf("The reversed list is: ");
+	while (*rev) {
+		printf("%d ", *rev);
+		rev++;
+	}
+
 }
