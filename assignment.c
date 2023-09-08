@@ -36,4 +36,12 @@ int main() {
 
 	printf("The addition of your numbers is: %d\n", add_arr(arr));
 	printf("The multiplication of your numbers is: %d\n", mult_arr(arr));
+
+	int* rev = rev_arr(arr, 5);
+	printf("The reversed list is: ");
+	while (*rev) {
+		printf("%d ", *rev);
+		rev++;
+	}
+
 }
