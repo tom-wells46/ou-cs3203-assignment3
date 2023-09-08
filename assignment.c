@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int add_arr(int* arr) {
 	int result = 0;
@@ -14,6 +15,14 @@ int mult_arr(int* arr) {
 	while (*arr) {
 		result *= *arr;
 		arr++;
+	}
+	return result;
+}
+
+int* rev_arr(int* arr, int size) {
+	int *result = malloc(size*sizeof(int));
+	for (int i = 0; i < size; i++) {
+		result[i] = arr[size-i-1];
 	}
 	return result;
 }
